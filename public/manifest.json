@@ -1,0 +1,9 @@
+{
+  "gcm_sender_id": "Forpr",
+  "short_name": "Forpr",
+  "name": "Forpr",
+  "start_url": "/login/",
+  "background_color": "#2196f3",
+  "theme_color": "#2196f3",
+  "display": "standalone"
+}
