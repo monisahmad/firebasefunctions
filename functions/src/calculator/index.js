@@ -8,8 +8,9 @@ import { to } from '../utils/async'
  * @param res - Express HTTP Response
  */
 async function calculatorRequest(req, res) {
-  const number1 = Number(req.body.number1)
-  const number2 = Number(req.body.number2)
+  const { number1: unparsedNumber1, number2: unparsedNumber2 } = req.body || {}
+  const number1 = Number(unparsedNumber1)
+  const number2 = Number(unparsedNumber2)
   const operation = req.body.operation
   const result = calculateResult(number1, number2, operation)
 
@@ -25,7 +26,7 @@ async function calculatorRequest(req, res) {
       .firestore()
       .collection('calculated')
       .doc('value')
-      .set({ result: result })
+      .set({ result })
   )
 
   let htmlResponse = ''

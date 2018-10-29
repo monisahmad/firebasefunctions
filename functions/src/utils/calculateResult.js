@@ -1,4 +1,4 @@
-const calculateResult = (number1, number2, operation) => {
+export default function calculateResult(number1, number2, operation) {
   let result = 0
   switch (operation) {
     case 'add':
@@ -19,5 +19,3 @@ const calculateResult = (number1, number2, operation) => {
   }
   return result
 }
-
-export default calculateResult
